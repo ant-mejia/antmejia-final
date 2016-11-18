@@ -1,0 +1,1106 @@
+/**
+ *
+ * =====================|
+ * Table of Contents:   |
+ * =====================|
+ *    1. GLOBAL
+ *        - 1.1. Reset
+ *        - 1.2. Selectors
+ *    2. HEADER
+ *        - 2.1. Header Logo
+ *        - 2.2. Navbar
+ *        - 2.3. Solid Header Style
+ *    3. Slideshow
+ *        - 3.1. Main Slide Backgrounds
+ *        - 3.2. Navigational Arrows
+ *        - 3.3. Slideshow Curtain
+ *    4. Main Container
+ *    5. Main Wrapper
+ *        - 5.1. Page Section
+ *    6. Forms
+ *    7. Footer  
+ *    8. Parallax Div
+ *    9. Progress Bars
+ *        - 9.1. Progress Bar Colors
+ *    10. Profile Page
+ *    11. About Page
+ *    12. Dashboard Page
+ *    13. Jobs
+ */
+
+
+/* ==========================================================================
+   1. GLOBAL
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* 1.1. RESET
+   ========================================================================== */
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    font-family: "Raleway", Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+footer,
+header,
+nav,
+section {
+    display: block;
+}
+
+div {
+    height: 100%;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+img {
+    border: 0;
+}
+
+li {
+    list-style: none;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+
+button,
+input[type="submit"] {
+    overflow: visible;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+a {
+    color: #1061AA;
+    text-decoration: none;
+    transition: all 0.3s linear 0s;
+}
+
+a:focus,
+a:active,
+button:focus,
+input:focus {
+    outline: 0;
+}
+
+a:active,
+a:hover,
+a:focus {
+    outline: 0;
+    color: #23527c;
+}
+
+p {
+    margin: 0;
+}
+
+
+/* 1.2. SELECTORS
+   ========================================================================== */
+
+a.text {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #aaa;
+    font-family: 'Dosis', sans-serif;
+}
+
+a.text:hover,
+a.text:focus {
+    color: #010101;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col3,
+.col4,
+.col6,
+.col8 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .col3,
+    .col4,
+    .col6,
+    .col8 {
+        float: left;
+    }
+    .col8 {
+        width: 66.6%;
+    }
+    .col6 {
+        width: 50%;
+    }
+    .col4 {
+        width: 33.3%;
+    }
+    .col3 {
+        width: 25%;
+    }
+}
+
+.row::before,
+.row::after {
+    content: "";
+    display: table;
+}
+
+.row::after {
+    clear: both;
+}
+
+.hide {
+    display: none !important;
+}
+
+.itc {
+    font-style: italic;
+}
+
+.cap {
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+}
+
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #000;
+}
+
+::selection {
+    color: #fff;
+    background: #000;
+}
+
+div.no-height {
+    height: initial;
+}
+
+div.h80 {
+    min-height: 80%;
+}
+
+div.h100 {
+    min-height: 100%;
+}
+
+div.hi {
+    height: initial;
+}
+
+.vert-align {
+    display: table;
+}
+
+.vert-align div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.icon-gradient {
+    background: -webkit-linear-gradient(45deg, #fc00ff, #00dbde);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.z4 {
+    z-index: 4;
+}
+
+
+/* ==========================================================================
+   2. HEADER
+   ========================================================================== */
+
+header {
+    transition: all 0.25s linear;
+    z-index: 200;
+    min-width: 100%;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+header .navbar {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    margin: auto;
+    justify-content: space-between;
+}
+
+
+/* 2.1. HEADER LOGO
+   ========================================================================== */
+
+.brand {
+    display: block;
+    font-size: 20px;
+    color: #777;
+    margin: 22px;
+}
+
+.brand span .logo-border {
+    display: block;
+    margin: -2px auto 0;
+    height: 1px;
+    width: 40px;
+    background: linear-gradient(to right, #f857a6, #ff5858);
+    border-radius: 10px;
+}
+
+.brand span {
+    position: absolute;
+    margin-top: 3px;
+    color: #fff;
+}
+
+
+/* 2.2. NAVBAR
+   ========================================================================== */
+
+.navbar nav {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.navbar nav .link {
+    display: block;
+    height: 64px;
+    line-height: 64px;
+    padding-left: 22px;
+    padding-right: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar nav .link.active,
+.navbar nav .link:hover,
+.navbar nav .link:focus {
+    border-bottom-color: #3092ec;
+}
+
+.navbar .profile-link {
+    margin-right: 20px;
+}
+
+.navbar .profile-link .username {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.navbar button {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+    border-radius: 40px;
+    padding: 10px 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s linear;
+}
+
+.navbar button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+
+/* 2.3. SOLID HEADER STYLE
+   ========================================================================== */
+
+header.solid {
+    transition: all 0.25s linear;
+    background: rgba(255, 255, 255, 0.992);
+    color: #aaa;
+}
+
+header.solid .navbar nav .link {
+    color: #aaa;
+}
+
+.solid .navbar .brand span,
+.solid .navbar .profile-link .username {
+    color: #aaa;
+}
+
+.solid .navbar button {
+    background: #157fe0;
+    border-color: transparent;
+    color: #fff;
+}
+
+.solid .navbar button:hover {
+    background: #156DBD;
+}
+
+
+/* ==========================================================================
+   3. SLIDESHOW
+   ========================================================================== */
+
+.slideshow {
+    z-index: -1;
+}
+
+.slideshow .slide {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    top: 0;
+}
+
+.slide-wrapper {
+    text-align: center;
+    width: 70%;
+    height: 50%;
+    overflow: hidden;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding-top: 40px;
+}
+
+.slide-wrapper * {
+    display: none;
+}
+
+.slide-wrapper h1 {
+    font-size: 60px;
+    font-weight: 100;
+    display: none;
+}
+
+.slide-wrapper h2 {
+    font-size: 30px;
+    font-weight: 100;
+    margin-top: 40px;
+    display: none;
+}
+
+.slide-wrapper .bar {
+    height: 2px;
+    background: #fff;
+    width: 30%;
+    margin: 0 auto 30px;
+    display: none;
+}
+
+
+/* 3.1. MAIN SLIDE BACKGROUNDS
+   ========================================================================== */
+
+.main-slide {
+    height: 100%;
+    background-image: url('../img/main-scene.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 0;
+}
+
+.main-slide2 {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 100%;
+}
+
+
+/* 3.2. NAVIGATIONAL ARROWS
+   ========================================================================== */
+
+.pos-arrow {
+    cursor: pointer;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    position: absolute;
+    padding: 20px 0 5px;
+    margin: 0 auto;
+    color: #fff;
+    opacity: 0;
+    display: table;
+}
+
+.arrowdown {
+    bottom: 0;
+    width: 100%;
+}
+
+.arrowleft,
+.arrowright {
+    top: 0;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+}
+
+.arrowleft {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.2));
+}
+
+.arrowright {
+    right: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.2));
+}
+
+.pos-arrow span {
+    display: block;
+    text-align: center;
+    font-size: 35px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.arrowleft span,
+.arrowright span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.pos-arrow:hover {
+    opacity: 1;
+    color: #fff;
+}
+
+
+/* 3.3. SLIDESHOW CURTAIN
+   ========================================================================== */
+
+.curtain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
+    border-right: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+.vid-container .vid-curtain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 0;
+    top: 0;
+    left: 0;
+}
+
+.parallax {
+    position: fixed;
+}
+
+.big-button {
+    display: none;
+    height: initial;
+    padding: 30px;
+    font-size: 25px;
+    width: 50%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease-out, color 0.3s linear;
+    color: #fff;
+    left: 0;
+    right: 0;
+}
+
+div[class$="button"] {
+    cursor: pointer;
+}
+
+.big-button:hover {
+    transition: background 0.3s ease-in, border-color 0.3s linear;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================================================================
+   4. MAIN CONTAINER
+   ========================================================================== */
+
+#main-container {
+    margin: 0;
+    padding: 0;
+}
+
+#jumbotron {
+    height: 100%;
+    min-height: 100%;
+    top: 0;
+    right: 0;
+    min-height: 100%!important;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    font-weight: 100;
+    overflow: hidden;
+}
+
+
+/* ==========================================================================
+   5. MAIN WRAPPER
+   ========================================================================== */
+
+#main-container .wrapper {
+    background: #fff;
+    display: block;
+    position: absolute;
+    padding: 7% 10% 0;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#main-container .wrapper .section-title {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#main-container .wrapper hr {
+    border-width: 2px 0 0 0;
+    max-width: 180px;
+}
+
+#main-container .wrapper .row {
+    margin-top: 100px;
+}
+
+#main-container .wrapper .main-icon {
+    font-size: 90px;
+    margin-bottom: 30px;
+}
+
+
+/* 5.1. PAGE SECTION
+   ========================================================================== */
+
+#main-container .page-section {
+    margin-bottom: 50px;
+}
+
+
+/* ==========================================================================
+   6. FORMS
+   ========================================================================== */
+
+.form-section {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-section .form-tab-group {
+    margin-bottom: 60px;
+}
+
+.form-section .form-tab {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #000;
+    border: 1px solid transparent;
+    background: transparent;
+    padding: 6px 20px 5px;
+    border-radius: 20px;
+    margin: 0 20px;
+    transition: all 0.2s linear;
+}
+
+.form-section .form-tab:hover {
+    border-color: #ccc;
+    color: #aaa;
+}
+
+.form-section .form-tab.active {
+    border-color: #000;
+    color: #888;
+}
+
+.form-section .form-tab.active:hover {
+    color: #000;
+}
+
+.form-section .form-subtitle {
+    margin: 40px 0;
+}
+
+.form-section input {
+    margin: 20px auto;
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    height: 40px;
+    padding: 5px 13px;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    width: 50%;
+    text-transform: uppercase;
+    box-shadow: none;
+}
+
+.form-section input[type="submit"] {
+    background: #157fe0;
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    transition: all 0.3s linear;
+}
+
+.form-section input[type="submit"]:hover {
+    background: #156DBD;
+}
+
+.form-section input:focus {
+    border-color: #000;
+}
+
+.form-section .error-message {
+    transition: none;
+    color: #ff324e;
+}
+
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+
+footer {
+    margin-top: 20%;
+    padding-bottom: 80px;
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+footer .copyright {
+    font-size: 20px;
+}
+
+footer a {
+    color: #888;
+    text-decoration: none;
+    transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+}
+
+footer a.top-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: rgba(0, 0, 0, .2);
+    font-size: 35px;
+}
+
+footer a:hover {
+    color: #111;
+}
+
+.footer-logo {
+    margin-bottom: 50px;
+}
+
+.copyright {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+}
+
+.print {
+    font-size: 11px;
+    color: #999;
+}
+
+.social-media {
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.social-media a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px !important;
+    position: relative;
+    margin: 0 6px;
+    text-align: center;
+    display: inline-block;
+    color: #a6a6a6;
+    transition: all 0.27s ease-in;
+}
+
+
+/* ==========================================================================
+   8. PARALLAX DIV
+   ========================================================================== */
+
+.parallax-wrapper {
+    padding-top: 10%;
+}
+
+.parallax-container {
+    height: 100%;
+    max-height: 400px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* ==========================================================================
+   9. PROGRESS BARS
+   ========================================================================== */
+
+.progress {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: visible;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0px;
+    box-shadow: none;
+    font-family: 'Dosis', sans-serif;
+}
+
+.progress .progress-bar {
+    padding-top: 2px;
+    position: relative;
+    overflow: visible;
+    background-color: #222;
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+    box-sizing: border-box;
+    height: 2px;
+}
+
+.progress .progress-bar span {
+    display: inline-block;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 3px;
+    position: absolute;
+    top: 0px;
+    right: -5px;
+    text-align: center;
+    line-height: 23px;
+    letter-spacing: 0;
+    border-radius: 15px;
+}
+
+.progress-color .progress-bar {
+    background-color: #e41919;
+    color: #e41919;
+}
+
+.progress-color .progress-bar > span {
+    background-color: #e41919;
+    color: #fff;
+}
+
+
+/* 9.1. PROGRESS BAR COLORS
+   ========================================================================== */
+
+.progress .progress-bar.blue {
+    background-color: #157fe0;
+}
+
+.progress .progress-bar.red {
+    background-color: #fd3d44;
+}
+
+.progress .progress-bar.green {
+    background-color: #21e28a;
+}
+
+.progress .progress-bar.navy {
+    background-color: #224564;
+}
+
+
+/* ==========================================================================
+   10. PROFILE PAGE (profile.html)
+   ========================================================================== */
+
+.profile {
+    padding-top: 50px;
+}
+
+.profile .col8 {
+    float: right;
+}
+
+.profile .jobs {
+    margin-top: 100px;
+    float: left;
+}
+
+.profile h1 {
+    width: 100%;
+    font-size: 40px;
+}
+
+.profile h3.join-date {}
+
+.profile .details p {
+    text-align: left;
+    padding-left: 30%;
+    margin: 15px;
+    font-size: 20px;
+}
+
+.profile .profile-picture {
+    border-radius: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 350px;
+    max-height: 350px;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.profile .profile-picture span {
+    width: 100.1%;
+    height: 100%;
+    display: inline-block;
+    min-height: 100%;
+}
+
+.profile .details p.resume a {
+    color: rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
+
+.profile .details p a:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.profile .settings {
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    color: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s linear;
+}
+
+.profile .settings:hover {
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.profile .jobs h2 {
+    font-size: 30px;
+}
+
+.profile .jobs h4 {
+    margin-top: 20%;
+    font-size: 55px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.profile .sign-out {
+    float: left;
+    margin: 0 auto 75px;
+    padding: 0;
+}
+
+.profile .sign-out button {
+    background: #FF324E;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    border: 2px solid #FF324E;
+    padding: 5px 20px;
+    border-radius: 40px;
+    transition: all 0.3s linear;
+}
+
+.profile .sign-out button:hover {
+    cursor: pointer;
+    background: #fff;
+    border-color: #E52D4B;
+    color: #E52D4B;
+}
+
+
+/* ==========================================================================
+   11. ABOUT PAGE (about.html)
+   ========================================================================== */
+
+.about-slide {
+    background-image: url('../img/office.jpg');
+    background-size: cover;
+}
+
+.about-stats {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.about-stats h3 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 40px;
+}
+
+.employees img {
+    border-radius: 30px;
+}
+
+
+/* ==========================================================================
+   12. DASHBOARD PAGE (dasboard.html)
+   ========================================================================== */
+
+.job-details {
+    text-align: left;
+}
+
+.job-location {
+    color: #aaa;
+    margin-left: 20px;
+}
+
+
+/* ==========================================================================
+   13. JOBS
+   ========================================================================== */
+
+.post h2 {
+    font-size: 40px;
+}
+
+.post span.lnr {
+    font-size: 60px;
+    color: #aaa;
+    padding-bottom: 200px;
+}
+
+.post h4 {
+    color: #aaa;
+    margin-top: -20px;
+}
+
+.post-description {
+    padding: 0 10%;
+}
+
+.post-description h3 {
+    margin: 40px auto;
+}
+
+.post-description p {
+    font-size: 18px;
+    text-align: left;
+}
+
+.apply {
+    background: linear-gradient(205deg, #1173FF, #0072ff 50%);
+    color: #fff;
+    border: none;
+    margin-top: 100px;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
